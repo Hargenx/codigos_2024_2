@@ -6,7 +6,7 @@ Release under the Windows 10
 Pyhton 3.8 - Jupyter notebook
 Tested with 64 bit (AMD64) 
 '''
-import comput_walk_module, comput_results_module
+import comput_walk_module, comput_results_module, provenance
 if __name__ == "__main__":
     # Unit test checking reproducibility
     # (will fail with Python<=3.2)
@@ -21,3 +21,4 @@ if __name__ == "__main__":
     with open("./results-R4.txt", "w") as fd:
         fd.write(str(results))
     print(results["data"])
+    provenance.desenha()
