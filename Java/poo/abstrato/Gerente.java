@@ -8,8 +8,18 @@ public class Gerente extends Funcionario {
         this.comissao = comissao;
     }
 
+
+    public double getComissao() {
+        return this.comissao;
+    }
+
+    public void setComissao(double comissao) {
+        this.comissao = comissao;
+    }
+
+
     @Override
     public double calcularSalario() {
-        return getSalarioBase() + comissao;
+        return getSalarioBase() + getComissao();
     }
 }

@@ -8,8 +8,18 @@ public class Desenvolvedor extends Funcionario {
         this.bonus = bonus;
     }
 
+
+    public double getBonus() {
+        return this.bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
+
+
     @Override
     public double calcularSalario() {
-        return getSalarioBase() + bonus;
+        return getSalarioBase() + getBonus();
     }
 }

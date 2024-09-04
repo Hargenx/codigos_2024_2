@@ -19,4 +19,9 @@ public abstract class Funcionario implements Pagamento {
 
     // Método abstrato para calcular o salário, implementado pelas subclasses.
     public abstract double calcularSalario();
+
+    @Override
+    public String toString() {
+        return getNome() + ": " + getSalarioBase();
+    }
 }
