@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class Restaurante {
 
-    private Set<String> pratosUnicos = new HashSet<>();
+    private Set<TipoPrato> pratosUnicos = new HashSet<>();
     private List<Pedido> pedidos = new ArrayList<>();
     private Queue<Pedido> filaPedidos = new LinkedList<>();
     private Deque<Pedido> acoesChef = new LinkedList<>();
@@ -20,12 +20,13 @@ public class Restaurante {
         restaurante.adicionarPedidos();
         restaurante.processarPedidos();
         restaurante.exibirInformacoes();
+        restaurante.exibirPratosUnicos();
     }
 
     public void adicionarPedidos() {
-        Pedido pedido1 = new Pedido(1, "Pizza Margherita");
-        Pedido pedido2 = new Pedido(2, "Hamburguer com batatas fritas");
-        Pedido pedido3 = new Pedido(3, "Salada Caesar");
+        Pedido pedido1 = new Pedido(1, TipoPrato.PIZZA_4_QUIEJOS);
+        Pedido pedido2 = new Pedido(2, TipoPrato.HAMBURGUER_COM_BATATAS);
+        Pedido pedido3 = new Pedido(3, TipoPrato.SALADA_CAESAR);
 
         pratosUnicos.add(pedido1.getPrato());
         pratosUnicos.add(pedido2.getPrato());
@@ -50,5 +51,9 @@ public class Restaurante {
         System.out.println("Ordem dos Pedidos: " + pedidos);
         System.out.println("Fila de Pedidos: " + filaPedidos);
         System.out.println("Ações do Chef: " + acoesChef);
+    }
+    
+    public void exibirPratosUnicos() {
+        pratosUnicos.forEach(prato -> System.out.println("Prato único: " + prato));
     }
 }
