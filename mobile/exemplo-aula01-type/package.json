@@ -1,5 +1,5 @@
 {
-  "name": "my-calculator",
+  "name": "exemplo-aula01-type",
   "version": "1.0.0",
   "main": "expo/AppEntry.js",
   "scripts": {
@@ -11,7 +11,6 @@
   "dependencies": {
     "expo": "~51.0.28",
     "expo-status-bar": "~1.12.1",
-    "my-calculator": "file:",
     "react": "18.2.0",
     "react-native": "0.74.5"
   },
