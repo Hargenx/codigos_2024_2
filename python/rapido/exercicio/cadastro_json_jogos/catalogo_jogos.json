@@ -1,0 +1,12 @@
+{
+    "The Legend of Zelda: Breath of the Wild": {
+        "plataforma": "Nintendo Switch",
+        "capa": "capa_zelda.png",
+        "nota": 9.8,
+        "completado": true,
+        "screens": [
+            "screen1.png",
+            "screen2.png"
+        ]
+    }
+}
