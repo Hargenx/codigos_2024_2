@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required minlength="3" maxlength="10" size="10" placeholder="digite seu nome"
+        pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]{3,10}">
+
+    <label for="escolha">Escolha a sua plataforma</label>
+    <input list="plataformas" id="plataforma" name="plataforma" placeholder="plataforma">
+    <datalist id="plataformas">
+        <option value="Windows">
+        <option value="Linux">
+        <option value="MacOS">
+    </datalist>
+
+    <br><br>
+
+    <label for="AuFood">Escolha seu animalzinho</label>
+    <select name="AuFood" id="AuFood">
+        <option value="Cachorro">Cachorro</option>
+        <option value="Gato">Gato</option>
+        <option value="Papagaio">Papagaio</option>
+    </select>
+
+    <br></br><br></br>
+
+
+    <label for="marcar-reuniao">Marque sua reunião</label>
+    <input type="datetime-local" id="marcar-reuniao" name="marcar-reuniao" min="2024-09-15T10:00" max="2024-12-01T18:00">
+
+
+
+    <br></br><br></br>
+    <button type="submit">Enviar</button>
+
+
+
+</body>
+</html>
