@@ -10,11 +10,7 @@ type SendIntentButtonProps = {
   }>;
 };
 
-const SendIntentButton = ({
-  acao,
-  extras,
-  children,
-}: SendIntentButtonProps) => {
+const SendIntentButton = ({ acao, extras, children,}: SendIntentButtonProps) => {
   const handlePress = useCallback(async () => {
     try {
       await Linking.sendIntent(acao, extras);
@@ -67,17 +63,7 @@ export default function App() {
       <View style={styles.section} id="sobre">
         <Text style={styles.sectionHeader}>Seção Sobre</Text>
         <Text>Conteúdo da seção Sobre.</Text>
-        <SendIntentButton
-          acao="android.settings.APP_NOTIFICATION_SETTINGS"
-          extras={[
-            {
-              key: "android.provider.extra.APP_PACKAGE",
-              value: "com.facebook.katana",
-            },
-          ]}
-        >
-          Configuração de notificação
-        </SendIntentButton>
+        <Text>...</Text>
         <Text>...</Text>
       </View>
       <View style={styles.section} id="contato">
