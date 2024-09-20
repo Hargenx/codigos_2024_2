@@ -1,6 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { useCallback } from 'react';
+import { StyleSheet, Text, View, Linking, Image, Alert, Button } from 'react-native';
 
+type SendIntentButtonProps = {
+  acao: string;
+  children: string;
+  extras?: Array<{
+    key: string;
+    value: string | number | boolean;
+  }>;
+};
+
+const SendIntentButton = ({
+  acao,
+  extras,
+  children,
+}: SendIntentButtonProps) => {
+  const handlePress = useCallback(async () => {
+    try {
+      await Linking.sendIntent(acao, extras);
+    } catch (e: any) {
+      Alert.alert(e.message);
+    }
+  }, [acao, extras]);
+
+  return <Button title={children} onPress={handlePress} />;
+};
 export default function App() {
   return (
     <View style={styles.container}>
@@ -36,10 +60,24 @@ export default function App() {
         <Text style={styles.sectionHeader}>Seção de Início</Text>
         <Text>Conteúdo da seção de Início.</Text>
         <Text>... </Text>
+        <SendIntentButton acao="android.intent.action.POWER_USAGE_SUMMARY">
+          Uso de bateria
+        </SendIntentButton>
       </View>
       <View style={styles.section} id="sobre">
         <Text style={styles.sectionHeader}>Seção Sobre</Text>
         <Text>Conteúdo da seção Sobre.</Text>
+        <SendIntentButton
+          acao="android.settings.APP_NOTIFICATION_SETTINGS"
+          extras={[
+            {
+              key: "android.provider.extra.APP_PACKAGE",
+              value: "com.facebook.katana",
+            },
+          ]}
+        >
+          Configuração de notificação
+        </SendIntentButton>
         <Text>...</Text>
       </View>
       <View style={styles.section} id="contato">
