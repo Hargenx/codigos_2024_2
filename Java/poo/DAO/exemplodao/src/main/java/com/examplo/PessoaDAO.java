@@ -160,5 +160,4 @@ public class PessoaDAO implements AutoCloseable {
             System.err.println("Erro ao fechar conexão com o banco de dados: " + e.getMessage());
         }
     }
-
 }
