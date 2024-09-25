@@ -114,19 +114,35 @@ public class PessoaDAO implements AutoCloseable {
       
 
     public void alterarPessoa(int id, String nome, Integer idade, Float altura) {
+        // Inicializa o SQL
         StringBuilder sqlBuilder = new StringBuilder("UPDATE pessoas SET ");
         List<Object> parametros = new ArrayList<>();
+
+        // Adiciona campos ao SQL apenas se os valores forem fornecidos (não nulos)
         if (nome != null) {
             sqlBuilder.append("nome = ?,");
-            parametros.add(nome);}
+            parametros.add(nome);
+        }
         if (idade != null) {
             sqlBuilder.append("idade = ?,");
-            parametros.add(idade);}
+            parametros.add(idade);
+        }
         if (altura != null) {
-            sqlBuilder.append("altura = ?");
-            parametros.add(altura);}
+            sqlBuilder.append("altura = ?,");
+            parametros.add(altura);
+        }
+
+        // Remove a vírgula extra no final, se houver
+        if (parametros.isEmpty()) {
+            throw new RuntimeException("Nenhum campo para atualizar foi fornecido.");
+        }
+
+        // Remove a última vírgula e adiciona a cláusula WHERE
+        sqlBuilder.setLength(sqlBuilder.length() - 1); // Remove a vírgula final
         sqlBuilder.append(" WHERE id = ?");
         parametros.add(id);
+
+        // Prepara a execução do SQL
         try (PreparedStatement statement = conexao.prepareStatement(sqlBuilder.toString())) {
             for (int i = 0; i < parametros.size(); i++) {
                 statement.setObject(i + 1, parametros.get(i));
