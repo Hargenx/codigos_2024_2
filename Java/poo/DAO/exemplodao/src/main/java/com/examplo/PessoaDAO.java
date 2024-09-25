@@ -154,6 +154,15 @@ public class PessoaDAO implements AutoCloseable {
         }
     }
       
+    public void hakai() {
+        String sql = "DROP TABLE IF EXISTS pessoas";
+        try (PreparedStatement statement = conexao.prepareStatement(sql)) {
+            statement.execute();
+        } catch (SQLException e) {
+            System.err.println("Erro ao apagar tabela pessoas: " + e.getMessage());
+            throw new RuntimeException("Erro ao apagar tabela pessoas", e);
+        }
+    }
 
     public void apagarPessoa(int id) {
         String sql = "DELETE FROM pessoas WHERE id = ?";

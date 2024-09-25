@@ -18,8 +18,10 @@ public class Main {
             dao.obterTodasPessoas().forEach(System.out::println);
             // Alterar uma pessoa - U
             dao.alterarPessoa(1, "Raphael", null, (float) 1.82);
+            dao.alterarPessoa(2, null, 31, null);
             System.out.println("Pessoa após alteração:");
             System.out.println(dao.obterPessoaPorId(1));
+            System.out.println(dao.obterPessoaPorId(2));
             // Apagar uma pessoa - D
             dao.apagarPessoa(3);
             System.out.println("Pessoa após exclusão:");
@@ -28,6 +30,7 @@ public class Main {
             dao.apagarPessoa(3);
             pessoa2 = dao.obterPessoaPorId(3);
             System.out.println(pessoa2);
+            dao.hakai();
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
