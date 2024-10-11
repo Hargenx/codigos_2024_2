@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Nome de Usuário</title>
+</head>
+<body>
+    <h1>Formulário de Validação de Nome de Usuário</h1>
+    <form id="formulario">
+        <label for="nome_usuario">Nome de Usuário:</label>
+        <input type="text" id="nome_usuario" name="nome_usuario">
+        <button type="submit">Validar</button>
+    </form>
+    <p id="mensagem"></p>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const nome_usuarioEntrada = document.getElementById("nome_usuario");
+        const mensagem = document.getElementById("mensagem");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            const nome_usuario = nome_usuarioEntrada.value;
+            if (nome_usuario) {
+                if (/^[a-zA-Z][a-zA-Z0-9_-]{4,14}$/.test(nome_usuario) && nome_usuario.length >= 5 && nome_usuario.length <= 15) {
+                    mensagem.textContent = "Nome de usuário válido!";
+                    mensagem.style.color = "green";
+                } else {
+                    mensagem.textContent = "Nome de usuário inválido. Por favor, siga as regras.";
+                    mensagem.style.color = "red";
+                }
+            } else {
+                mensagem.textContent = "Por favor, insira um nome de usuário.";
+                mensagem.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
