@@ -1,0 +1,56 @@
+[
+  {
+    "cliente_id": 1,
+    "nome": "João",
+    "data_compra": "2024-10-10",
+    "valor_compra": 500
+  },
+  {
+    "cliente_id": 2,
+    "nome": "Maria",
+    "data_compra": "2024-10-11",
+    "valor_compra": 1500
+  },
+  {
+    "cliente_id": 3,
+    "nome": "Carlos",
+    "data_compra": "2024-10-12",
+    "valor_compra": 3000
+  },
+  {
+    "cliente_id": 1,
+    "nome": "João",
+    "data_compra": "2024-10-13",
+    "valor_compra": 700
+  },
+  {
+    "cliente_id": 4,
+    "nome": "Ana",
+    "data_compra": "2024-10-14",
+    "valor_compra": 400
+  },
+  {
+    "cliente_id": 2,
+    "nome": "Maria",
+    "data_compra": "2024-10-15",
+    "valor_compra": 1000
+  },
+  {
+    "cliente_id": 5,
+    "nome": "José",
+    "data_compra": "2024-10-16",
+    "valor_compra": 2500
+  },
+  {
+    "cliente_id": 3,
+    "nome": "Carlos",
+    "data_compra": "2024-10-17",
+    "valor_compra": 3000
+  },
+  {
+    "cliente_id": 2,
+    "nome": "Maria",
+    "data_compra": "2024-10-18",
+    "valor_compra": 1200
+  }
+]

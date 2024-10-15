@@ -23,9 +23,9 @@ class TreeviewExampleApp:
         self.tree.column("Profissão", width=150)
 
         # Adicionar alguns dados
-        self.tree.insert("", "end", values=("Ana", 25, "Engenheira"))
-        self.tree.insert("", "end", values=("Carlos", 30, "Professor"))
-        self.tree.insert("", "end", values=("Beatriz", 28, "Médica"))
+        self.tree.insert("", "end", values=("Raphael", 40, "Desenvolvedor"))
+        self.tree.insert("", "end", values=("Caroline", 31, "Nutricionista"))
+        self.tree.insert("", "end", values=("Sara", 68, "Professora"))
 
         # Mostrar o Treeview na tela
         self.tree.pack(pady=20)
@@ -38,7 +38,7 @@ class TreeviewExampleApp:
 
     def adicionar_linha(self):
         # Exemplo de como adicionar uma nova linha ao Treeview
-        self.tree.insert("", "end", values=("João", 40, "Advogado"))
+        self.tree.insert("", "end", values=("Gilson", 68, "Contador"))
 
 
 if __name__ == "__main__":

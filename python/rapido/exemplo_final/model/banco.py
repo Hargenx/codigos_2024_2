@@ -54,6 +54,44 @@ class BancoDeDados:
                 self.conn.commit()
             except sqlite3.Error as e:
                 print(f"Erro ao criar tabela Marca: {e}")
+    
+    def inserir_marcas_populares(self):
+        if self.conn:
+            try:
+                cursor = self.conn.cursor()
+                marcas_populares = [
+                    ("Toyota", "TOY"),
+                    ("Volkswagen", "VW"),
+                    ("Ford", "FRD"),
+                    ("Honda", "HND"),
+                    ("Chevrolet", "CHV"),
+                    ("Mercedes-Benz", "MBZ"),
+                    ("BMW", "BMW"),
+                    ("Audi", "AUD"),
+                    ("Nissan", "NSN"),
+                    ("Hyundai", "HYU"),
+                    ("Fiat", "FIA"),
+                    ("Kia", "KIA"),
+                    ("Peugeot", "PEU"),
+                    ("Jeep", "JEP"),
+                    ("Renault", "REN")
+                ]
+
+                # Verifica se já existem marcas cadastradas
+                cursor.execute("SELECT COUNT(*) FROM Marca")
+                count_marcas = cursor.fetchone()[0]
+
+                if count_marcas == 0:
+                    cursor.executemany(
+                        "INSERT INTO Marca (nome, sigla) VALUES (?, ?)", 
+                        marcas_populares
+                    )
+                    self.conn.commit()
+                    print("Marcas populares inseridas com sucesso.")
+                else:
+                    print("Marcas já existem no banco.")
+            except sqlite3.Error as e:
+                print(f"Erro ao inserir marcas populares: {e}")
 
     def criar_tabela_veiculo(self):
         if self.conn:
