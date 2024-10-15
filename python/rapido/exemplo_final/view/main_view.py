@@ -1,59 +1,54 @@
 import tkinter as tk
 from tkinter import messagebox
-from controller.motorista_controller import MotoristaController
-
+from model.banco import BancoDeDados
+from view.cadastrar_veiculo_view import CadastroVeiculoApp
 
 class MainApp:
-    def __init__(self, root):
+    def __init__(self, root, banco):
         self.root = root
-        self.root.title("Tela Principal")
-        self.controller = MotoristaController()
+        self.banco = banco  # Atribui o banco de dados recebido
+
+        self.root.title("Cadastro de Motoristas e Veículos")
+        self.root.geometry("400x600")
+
+        # Definir o fundo da janela
+        self.root.configure(bg='#2c3e50')
+
+        # Centralizar os widgets
+        self.frame = tk.Frame(root, bg='#34495e')
+        self.frame.place(relx=0.5, rely=0.5, anchor='center')
+
+        # Título
+        self.label_title = tk.Label(self.frame, text="MENU PRINCIPAL", font=("Arial", 24, "bold"), bg='#34495e', fg='white')
+        self.label_title.grid(row=0, column=0, columnspan=2, pady=20)
 
         # Botões para cadastrar motorista e veículo
-        self.btn_cadastrar_motorista = tk.Button(
-            root, text="Cadastrar Motorista", command=self.cadastrar_motorista
-        )
-        self.btn_cadastrar_motorista.grid(row=0, column=0)
+        self.btn_cadastrar_motorista = tk.Button(self.frame, text="Cadastrar Motorista", font=("Arial", 14), command=self.cadastrar_motorista, bg='#1abc9c', fg='white', bd=0, width=20)
+        self.btn_cadastrar_motorista.grid(row=1, column=0, columnspan=2, pady=10)
 
-        self.btn_cadastrar_veiculo = tk.Button(
-            root, text="Cadastrar Veículo", command=self.cadastrar_veiculo
-        )
-        self.btn_cadastrar_veiculo.grid(row=0, column=1)
+        self.btn_cadastrar_veiculo = tk.Button(self.frame, text="Cadastrar Veículo", font=("Arial", 14), command=self.cadastrar_veiculo, bg='#1abc9c', fg='white', bd=0, width=20)
+        self.btn_cadastrar_veiculo.grid(row=2, column=0, columnspan=2, pady=10)
 
-        # Listar veículos cadastrados
-        self.label_veiculos = tk.Label(root, text="Veículos Cadastrados:")
-        self.label_veiculos.grid(row=1, column=0, columnspan=2)
+        # Lista de veículos cadastrados
+        self.label_veiculos = tk.Label(self.frame, text="Veículos Cadastrados:", font=("Arial", 14), bg='#34495e', fg='white')
+        self.label_veiculos.grid(row=3, column=0, columnspan=2, pady=10)
 
-        self.listbox_veiculos = tk.Listbox(root, width=50)
-        self.listbox_veiculos.grid(row=2, column=0, columnspan=2)
+        self.listbox_veiculos = tk.Listbox(self.frame, font=("Arial", 12), width=40, height=10)
+        self.listbox_veiculos.grid(row=4, column=0, columnspan=2, padx=10, pady=10)
+
+        # Preencher com dados fictícios (substitua pela lógica real)
         self.atualizar_lista_veiculos()
 
     def cadastrar_motorista(self):
-        # Aqui você redirecionaria para a tela de cadastro de motorista
-        messagebox.showinfo(
-            "Cadastrar", "Redirecionar para tela de cadastro de motorista"
-        )
+        messagebox.showinfo("Cadastrar", "Redirecionar para tela de cadastro de motorista")
 
     def cadastrar_veiculo(self):
-        # Aqui você redirecionaria para a tela de cadastro de veículo
-        messagebox.showinfo(
-            "Cadastrar", "Redirecionar para tela de cadastro de veículo"
-        )
+        root = tk.Toplevel()  # Abre uma nova janela
+        app = CadastroVeiculoApp(root, self.banco)  # Agora usamos self.banco em vez de self.controller.banco
+        root.mainloop()
 
     def atualizar_lista_veiculos(self):
-        # Obtenha os veículos do banco de dados
-        veiculos = self.controller.banco.buscar_todos_veiculos()
-        self.listbox_veiculos.delete(0, tk.END)
+        # Adicionar veículos fictícios (essa função deve ser ajustada com os dados reais)
+        veiculos = ["Placa ABC1234 - Ford - Com Motorista", "Placa XYZ9876 - Honda - Sem Motorista"]
         for veiculo in veiculos:
-            motorista = (
-                veiculo.proprietario.nome if veiculo.proprietario else "Sem Motorista"
-            )
-            self.listbox_veiculos.insert(
-                tk.END, f"{veiculo.placa} - {veiculo.marca.nome} ({motorista})"
-            )
-
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = MainApp(root)
-    root.mainloop()
+            self.listbox_veiculos.insert(tk.END, veiculo)
