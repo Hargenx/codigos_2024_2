@@ -50,7 +50,7 @@ Dataset utilizado: <https://www.kaggle.com/datasets/willianoliveiragibin/imports
 ## Estrutura do projeto
 
 ```bash
-projeto_visualizacao
+exemplo-stremlit
 │
 ├── Imports_Exports_Dataset new.csv  # Arquivo de dados CSV utilizado no projeto
 ├── app.py                           # Script principal com a aplicação Streamlit
