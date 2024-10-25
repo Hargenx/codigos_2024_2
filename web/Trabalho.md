@@ -1,4 +1,4 @@
-# Enunciado do Trabalho em Grupo – Desenvolvimento Web em HTML5, CSS e Javascript
+# Enunciado do Trabalho em Grupo – Desenvolvimento Web em HTML5, CSS, Javascript e PHP
 
 **Objetivo:**
 Desenvolver um site responsivo com 5 páginas, utilizando HTML5, CSS (ou um framework de CSS, como Bootstrap ou Tailwind) e Javascript, que abordem temas distintos dentro de um conceito geral de projeto. O trabalho deve ser realizado em grupos de até 5 alunos.
