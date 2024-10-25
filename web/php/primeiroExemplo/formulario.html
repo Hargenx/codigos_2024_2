@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Validando Formulario</title>
+</head>
+<body>
+    <form name="formulario" id="formulario" method="post" action="server.php" onsubmit="return validar()">
+        <label for="nome">Nome: </label><br/>
+        <input type="text" name="nome" placeholder="Digite seu nome" id="nome" value="" size="50"><br/>
+        <span id="nomeErro" class="erro"></span><br/>
+
+        <label for="email">Email: </label><br/>
+        <input type="email" name="email" placeholder="Digite seu email" id="email" value="" size="50"><br/>
+        <span id="emailErro" class="erro"></span><br/>
+
+        <input type="submit" value="Enviar Dados">
+    </form>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
