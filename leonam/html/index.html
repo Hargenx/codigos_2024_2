@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel de Avaliação Física</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <div class="flex flex-col lg:flex-row">
+    <!-- Sidebar -->
+    <aside class="w-full lg:w-1/5 bg-gray-800 p-4">
+      <nav class="space-y-6">
+        <div class="text-center">
+          <h2 class="text-xl font-bold text-red">MENU PRINCIPAL</h2>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex items-center space-x-2">
+            <span>📊</span>
+            <a href="#" class="text-lg text-white">P1 Gordura</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span>⚖️</span>
+            <a href="#" class="text-lg text-white">P2 Corporal</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span>📦</span>
+            <a href="#" class="text-lg text-white">P3 Warehouse</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span>📐</span>
+            <a href="#" class="text-lg text-white">P4 Dobras Subcutâneas</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span>💪</span>
+            <a href="#" class="text-lg text-white">P5 Bioimpedância</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span>⚕️</span>
+            <a href="#" class="text-lg text-white">P6 Fisioterapia</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span>📈</span>
+            <a href="#" class="text-lg text-white">P7 Análise de Desempenho</a>
+          </li>
+        </ul>
+        <div class="mt-10">
+          <a href="#" class="block text-center text-lg text-gray-400">Configurações</a>
+          <a href="#" class="block text-center text-lg text-gray-400 mt-2">Login</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="w-full lg:w-4/5 p-4 lg:p-6">
+      <header class="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-4 lg:space-y-0">
+        <h1 class="text-2xl font-bold">Bem vinda, Anna Mendes</h1>
+        <div class="flex items-center space-x-4">
+          <span class="text-lg">🔍</span>
+          <span class="text-lg">👤 Anna Mendes</span>
+        </div>
+      </header>
+
+      <p class="text-gray-400 mt-2">
+        Esse é seu relatório de Avaliação Física, Fisioterapia e Análise de Desempenho
+      </p>
+
+      <!-- Cards Section -->
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <p class="text-gray-400">Avaliação</p>
+          <h2 class="text-2xl font-bold">1ª Avaliação</h2>
+          <p class="text-gray-400">16/10/2024</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <p class="text-gray-400">Idade</p>
+          <h2 class="text-2xl font-bold">17 anos</h2>
+          <p class="text-gray-400">29/06/1994</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <p class="text-gray-400">Peso</p>
+          <h2 class="text-2xl font-bold">58,8kg</h2>
+          <p class="text-green-400">+0%</p>
+          <p class="text-gray-400">1ª Av. Next Step</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <p class="text-gray-400">Altura</p>
+          <h2 class="text-2xl font-bold">1,63cm</h2>
+          <p class="text-green-400">+0%</p>
+          <p class="text-gray-400">1ª Av. Next Step</p>
+        </div>
+      </section>
+
+      <!-- Histórico Section -->
+      <section class="mt-8">
+        <h3 class="text-xl font-bold">Histórico</h3>
+        <div class="bg-gray-800 p-6 mt-4 rounded-lg">
+          <!-- Placeholder for graph -->
+          <div class="w-full h-64 bg-gray-700 rounded-lg flex justify-center items-center">
+            <p class="text-gray-400">[Gráfico Histórico Placeholder]</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resultados Atuais Section -->
+      <section class="mt-8">
+        <h3 class="text-xl font-bold">Resultados Atuais</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <p>Peso Magro</p>
+            <h2 class="text-2xl font-bold">15%</h2>
+            <p class="text-red-400">+18%</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <p>Peso Gordo</p>
+            <h2 class="text-2xl font-bold">15%</h2>
+            <p class="text-red-400">+18%</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <p>% Gordura</p>
+            <h2 class="text-2xl font-bold">15%</h2>
+            <p class="text-red-400">+18%</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg">
+            <p>IMC</p>
+            <h2 class="text-2xl font-bold">15%</h2>
+            <p class="text-red-400">+18%</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="flex justify-center items-center mt-10 text-gray-400">
+    <p>Next Step - Physical Performance</p>
+  </footer>
+</body>
+</html>

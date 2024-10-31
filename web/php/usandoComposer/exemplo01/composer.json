@@ -1,0 +1,17 @@
+{
+    "name": "harge/exemplo01",
+    "autoload": {
+        "psr-4": {
+            "Harge\\Exemplo01\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raphael",
+            "email": "Hargenx@hotmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^3.4"
+    }
+}
