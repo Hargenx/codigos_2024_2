@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD de Jogos</title>
+    <link rel="StyleSheet" href="style.css" />
+  </head>
+
+<html lang="pt-br">
+
+<head>    
+    <title>CRUD de Jogos</title>
+    <link rel="StyleSheet" href="style.css">
+</head>
+
+<body>
+    <h1>Cadastro de Jogos</h1>
+    <form action="adicionar.php" method="post">
+        <label for="nome">Nome do Jogo:</label>
+        <input type="text" name="nome" id="nome" required><br>
+
+        <label for="plataforma">Plataforma:</label>
+        <input type="text" name="plataforma" id="plataforma" required><br>
+
+        <label for="genero">Gênero:</label>
+        <input type="text" name="genero" id="genero" required><br>
+
+        <input type="submit" id="botao" value="Cadastrar">
+
+        <p id="resultado"></p>
+    </form>
+
+    <a href="listar.php">Listar Jogos</a>
+</body>
+</html>
+
+</html>
