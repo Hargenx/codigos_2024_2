@@ -99,6 +99,7 @@ Crie um arquivo separado que funcione como o **menu principal** para manipular o
 
 - Envie o código-fonte da sua implementação em Python, dividindo o código entre a definição da classe `Produto` e o menu interativo em arquivos separados.
 - O código deve estar **bem documentado**, com comentários explicando as funções e os principais trechos de código.
+- Entrega no SAVA por link do github, PÚBLICO, até 01/11/2024.
 
 ## Avaliação
 

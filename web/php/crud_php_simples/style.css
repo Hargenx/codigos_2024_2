@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    padding: 7px 14px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    transition: all .3s ease;
+}
+
+button:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .1);
+    transform: translateY(-2px);
+}
+
+#botao {
+    background-color: rgb(11, 39, 201);
+    color: #fff;
+    cursor: pointer;
+    padding: 7px 14px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    transition: all .3s ease;
+}
+
+#botao:hover {
+    background-color: rgb(35, 144, 148);
+}
+
+a {
+    text-decoration: none;
+    line-height: 38px;
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+.editar {
+    background-color: rgba(70, 114, 66, 0.5);
+
+}
+
+.editar:hover {
+    background-color: rgba(70, 114, 66, 0.7);
+}
+
+.excluir {
+    background-color: rgba(186, 21, 21, 0.5);
+}
+
+.excluir:hover {
+    background-color: rgba(186, 21, 21, 0.7);
+}
