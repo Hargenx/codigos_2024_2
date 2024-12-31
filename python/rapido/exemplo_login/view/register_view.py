@@ -5,7 +5,7 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from controller.auth_controller import AuthController
-
+from view.login_view import LoginView
 
 class RegisterView(tk.Tk):
     def __init__(self):
@@ -79,6 +79,3 @@ class RegisterView(tk.Tk):
     def voltar_tela_login(self):
         self.destroy()
         LoginView()
-
-
-from view.login_view import LoginView

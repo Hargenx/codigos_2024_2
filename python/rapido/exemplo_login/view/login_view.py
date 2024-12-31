@@ -6,7 +6,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from controller.auth_controller import AuthController
 from view.main_view import MainView
-
+from view.register_view import RegisterView
 
 class LoginView(tk.Tk):
     def __init__(self):
@@ -76,13 +76,7 @@ class LoginView(tk.Tk):
     def abrir_tela_cadastro(self):
         self.destroy()
         RegisterView()
-import sys
-import os
 
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-from view.register_view import RegisterView 
 if __name__ == "__main__":
     app = LoginView()
     app.mainloop()
