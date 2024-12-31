@@ -1,5 +1,13 @@
 import tkinter as tk
 
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from view.login_view import (
+    LoginView,
+)
 
 class MainView(tk.Tk):
     def __init__(self):
@@ -38,11 +46,3 @@ class MainView(tk.Tk):
     def sair(self):
         self.destroy()
         LoginView()
-import sys
-import os
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-from view.login_view import (
-    LoginView,
-)
